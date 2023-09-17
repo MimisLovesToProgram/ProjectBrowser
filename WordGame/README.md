@@ -3,3 +3,4 @@ When you find a letter in the correct spot, it will appear between the underscor
 If you find a letter at the wrong spot, it will appear in the "To be placed" list.
 Letters that don't exist in the word are shown in the "Used" list.
 Find the word before you run out of tries to win!
+This project does not have a result file.
