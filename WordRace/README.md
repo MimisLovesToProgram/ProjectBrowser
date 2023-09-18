@@ -4,3 +4,4 @@ determined by the difficulty.
 - Normal: 40s
 - Hard: 20s
 In this project's result file, you can find your record for every difficulty ever achieved.
+If you empty the result file, it will be filled again the next time you start the game.
