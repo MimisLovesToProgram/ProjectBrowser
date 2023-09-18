@@ -6,7 +6,7 @@ projectind = 0
 
 # Loading the projects from this directory to the 'projects' dictionary.
 for project in os.listdir():
-  if os.path.isdir(project):
+  if os.path.isdir(project) and not project.startswith("."):
     projectind += 1
     projects[str(projectind)] = project
 
