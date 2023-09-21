@@ -24,6 +24,12 @@ for word in words:
   if word.lower().strip() in password.lower():
     strength -= 10
 
+if password.isnumeric():
+  strength -= 50
+
+if password.isalpha():
+  strength -= 30
+
 # Fixing the value if it has gone beyond the possible limits.
 if strength > 100:
   strength = 100
