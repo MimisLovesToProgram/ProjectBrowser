@@ -3,7 +3,8 @@ import shutil
 import mimetypes
 
 # Getting information about the folder to organize, and the user's name.
-mid_folders = input("Type the folders from your user's folder to the folder to be organized (separated by spaces) ").split(" ")
+# Why have mid_folders instead of just folder with an input? With mid_folders its easier to get the user's name, to be used later.
+mid_folders = input("Type the folders from your user's folder to the folder to be organized (separated by '\\') ").split("\\")
 user = mid_folders[0]
 folder = "C:\\Users\\" + "\\".join(mid_folders)
 
