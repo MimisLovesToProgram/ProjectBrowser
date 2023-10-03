@@ -4,6 +4,10 @@ import random
 import os
 import datetime
 
+# Show the user the result file, for convenience.
+with open(f"{os.getcwd()}\\Self-Improver\\savefile.txt") as f:
+    print(f.read() + "\n")
+
 # Try to get quotes to show the user if they want to.
 quotes_available = True
 try:
@@ -40,7 +44,10 @@ if action == "1":
     # If there is a goal with this title, reset it with the data provided by the user.
     else:
         correct = False
-        new_goal = int(input(f"What will {title}'s new goal be (in minutes)? "))
+        new_goal = input(f"What will {title}'s new goal be (in minutes)? ")
+        while not new_goal.isnumeric():
+            new_goal = input("Please enter a new minute goal. ")
+        new_goal = int(new_goal)
         for line in prevlines:
             # Checking if we are iterating over the correct lines, and if not, not changing the rest of the lines.
             if "-----------------" in line and title in line:

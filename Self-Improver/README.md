@@ -1,5 +1,10 @@
 A simple self-improvement app in which you can create multiple goals, update your progress in them, or read random quotes.
-Here is how to use it: (for every info on your goals, check the result file)
+Here is how to use it: (for any info needed on your goals, check the result file)
+- Check the information that appears when you first run this program. Those are the contents of the project's result file, shown to
+  inform you about your goal titles and information to be used while you are running the program, therefore making the need to check
+  the result file before running needless. Remember, you can always check your progress and information on your goals from the result file
+  without needing to run the program.
+  
 - Pick one of the options in the first prompt. Here are the options:
   1) You first provide a title for a goal. If the goal is inexistent, it will be created. Otherwise, the existing one will be restarted with a
      new minute goal. Useful when you complete a goal, and you would like to start it over again, maybe to reach your goals faster that time!
