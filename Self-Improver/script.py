@@ -6,6 +6,7 @@ import datetime
 
 # Show the user the result file, for convenience.
 with open(f"{os.getcwd()}\\Self-Improver\\savefile.txt") as f:
+    print("Here are the contents of the project's result file, for convenience and informative purposes:\n")
     print(f.read() + "\n")
 
 # Try to get quotes to show the user if they want to.
