@@ -23,7 +23,7 @@ for i in range(num):
         password += pattern
 
     # Write the generated password in PassLog.log, but only from start to the length limit.
-    with open(f"{os.getcwd()}\\PasswordGenerator\\PassLog.log", "a") as l:
+    with open(f"{os.getcwd()}\\PasswordGenerator\\result.txt", "a") as l:
         l.write(password[:plen] + "\n")
 
     password = ""

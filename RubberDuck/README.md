@@ -1,10 +1,30 @@
-A duck responding to what you tell it randomly. The only thing it understands is whether what you tell it is a question, an exclamation, a simple sentence or not.
-------------------------------------------------------------------------------------------------------------------------------------------------
-This duck is able to make you smile within a minute via the fact that it's responses defy all logic most of the time. In other words, it is what you need for a good laugh!
-------------------------------------------------------------------------------------------------------------------------------------------
-You can also save your conversations for you to be able to laugh at them later on, at the 'saved.txt' file (the result file)!
+**The Rubber Duck Chatbot**
 
-HOW TO USE:
-- Say "bye" in a short sentence to end the conversation
-- Say "save" in a short sentence to save the conversation
-- Say anything else to simply talk. Get different responses by adding ! or asking something instead of just saying normal stuff.
+**Introduction:**
+
+Meet the Rubber Duck, your whimsical chat companion. It engages in light-hearted, random conversations and is perfect for a good laugh or a 
+quick chat.
+
+**Usage:**
+
+The Rubber Duck chatbot responds to your input in various entertaining ways:
+
+- Normal sentences: You can engage in a regular chat with the duck, and it will respond with random phrases.
+- Questions: If you ask a question, the duck responds with quirky answers.
+- Exclamations: Using exclamation points will trigger enthusiastic responses from the duck.
+- Commands:
+  - To end the conversation, include "bye" in a short sentence (e.g., "bye duck") to bid farewell.
+  - To save the conversation, include "save" in a short sentence (e.g., "save this chat") to preserve it.
+
+**Conversations Saved:**
+
+The Rubber Duck allows you to save your conversations. You can find these saved chats in the 'saved.txt' file (the result file).
+
+**How to Use:**
+
+- To start the conversation, type anything you like, and the duck will respond accordingly.
+- Make the interaction amusing by adding exclamation points or asking questions.
+- To end the conversation, say "bye" in a short sentence.
+- To save the conversation, say "save" in a brief statement.
+
+Enjoy lighthearted conversations and good laughs with the Rubber Duck chatbot!

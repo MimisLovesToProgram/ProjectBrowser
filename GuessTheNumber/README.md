@@ -1,6 +1,33 @@
-First, input a number, and then try to guess the computer's number. You have 3 tries.
-If you find the number, you will get the remaining amount of guesses +1 as points.
-Then, the computer will randomly guess numbers, and make it's number range smaller according to what information is given by the guess.
-After each guess, you are given a hint about whether the number you gave is bigger or smaller than the other number.
-First to get 5 points wins. If however both players get to 5 points or above, either the person with most points wins, or it is a draw.
-After each game, the results are saved on the GameLog.log file.
+Guess the Number - A Two-Player Number Guessing Game
+
+**Introduction:**
+
+Guess the Number is a classic two-player number guessing game where you'll try to outsmart your opponent by finding their chosen numbers before 
+they find yours. This turn-based game adds an element of strategy to your number guessing skills.
+
+**Game Rules:**
+
+1. Player 1 (the computer) and Player 2 (you) each choose a number between 1 and 16.
+2. You have three attempts to guess Player 1's chosen number, and Player 1 will make random guesses to find your number.
+3. If you guess correctly, you earn points based on the number of attempts remaining.
+4. Player 1 adjusts its guesses based on your hints (smaller or larger), gradually narrowing down the range.
+5. The first player to accumulate 5 points wins the game.
+
+**Gameplay:**
+
+- As Player 2, you start by choosing a number within the specified range.
+- Guess Player 1's number within your limited attempts, getting hints about whether your guess is smaller or larger.
+- Player 1, the computer, makes guesses based on a refined range and updates the range based on your hints.
+- The game continues until one player reaches 5 points or until it's a draw if both players reach 5 points or more.
+
+**Scoring:**
+
+- If Player 2 correctly guesses Player 1's number, they earn points equal to the remaining attempts.
+- The game's results are recorded in the GameLog.log file, indicating which player won or if it's a draw.
+
+**Game Logging:**
+
+After each game, the results are saved in the "GameLog.log" file, indicating the winner and the number of rounds played.
+
+This is a competitive number guessing game that tests your intuition and strategy. Challenge your friends or the computer and see who can reach 
+5 points first!

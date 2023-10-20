@@ -3,16 +3,19 @@ import os
 
 strength = 0
 password = input("Enter a password to check its strength: ")
-words = []
-with open(f"{os.getcwd()}\\PasswordStrengthChecker\\dictionary.txt") as f:
-    words = f.readlines()
+
+# Creating a generator to iterate over words in dictionary.txt efficiently.
+def words():
+    with open(f"{os.getcwd()}\\PasswordStrengthChecker\\dictionary.txt") as f:
+        for word in f.readlines():
+            yield word
 
 # Adjusting the variable 'strength' according to what is contained in the password.
 for i in range(len(password)):
-    strength += 4
+    strength += 5
 
 for i in range(len(re.findall(r"[!'#$%&()*+,-\\/^@<>[]{}=_|.`?]", password))):
-    strength += 12
+    strength += 14
 
 for i in range(len(re.findall(r"[A-Z]", password))):
     strength += 8
@@ -20,7 +23,7 @@ for i in range(len(re.findall(r"[A-Z]", password))):
 for i in range(len(re.findall(r"[0-9]", password))):
     strength += 8
 
-for word in words:
+for word in words():
     if word.lower().strip() in password.lower():
         strength -= 10
 

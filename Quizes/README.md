@@ -1,12 +1,29 @@
-Add any quiz in the result file via the script. Then, check them later on through the script again.
+**Quiz Management Script - Read, Add, or Delete Quizzes**
 
-HOW TO USE:
+**Introduction:**
 
-First, type a title for the quiz. There must not be duplicate titles.
-Type the question with a ? in the end, and after that add the answer.
-For reading them (or doing them), submit your answer, and then the answer you have set will be revealed.
-For removing a quiz, type it's title, and it will be deleted.
+The Quiz Management Script allows you to interact with quizzes. You can read saved quizzes, add new quizzes, and delete existing ones. Each 
+action is explained below.
 
-NOTE:
+**Usage:**
 
-Failure to comply with the HOW TO USE instructions will result in the program crashing.
+1. To read a saved quiz:
+   - Type "read" when prompted.
+   - Enter the title of the quiz you want to read.
+   - The script will present the quiz questions, and you can answer them one by one.
+
+2. To add a new quiz:
+   - Type "add" when prompted.
+   - Provide a unique title for the quiz.
+   - Enter questions and answers for the quiz. Type "stop" to finish adding questions.
+
+3. To delete a quiz:
+   - Type "delete" when prompted.
+   - Enter the title of the quiz you want to delete.
+   - The script will remove the selected quiz.
+
+**Important Notes:**
+
+- Ensure that you provide unique titles for quizzes, as duplicate titles are not allowed.
+
+The Quiz Management Script simplifies managing your quizzes, allowing you to create, read, and delete quizzes with ease.

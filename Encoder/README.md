@@ -1,24 +1,48 @@
-INSTRUCTIONS:
+Encoder Documentation
+Introduction
+The Encoder is a command-line utility that allows users to encrypt and decrypt files securely. Whether you want to protect sensitive documents or explore custom encryption, this tool offers an easy-to-use solution. This documentation will guide you through its features and usage.
 
-- To choose what file to encrypt/decrypt using this model, write the file's name on the first prompt. !!!IMPORTANT!!!: After each file name
-  , append the respective file extension (.txt for text files [most common], and for whatever else you would like to encrypt, just look it  
-  up)
-- To choose what action to do with this file, write 'encrypt' or 'decrypt' on the second prompt.
-- If you trigger the Advanced settings, you will be asked questions about stuff having to do with the file.
-- If you would like to check out how it works, try it with the 'Test' text file on this folder.
+Features:
+User-Friendly Interface: The Encoder offers a straightforward command-line interface, making encryption and decryption accessible for all users.
 
-NOTES:
+Text File Support: Encoder can encrypt and decrypt text files, making it suitable for documents, notes, and more.
 
-- This encoding model only supports English and punctuation characters of any kind (except `).
-- This model can only perform actions on files existing on the directory the model is located at. For external actions, you can bring the
-  files you would like to encrypt/decrypt to this folder, and them send them wherever you want.
-- Most likely to work with text files, not applications, though there may be exceptions. But why would you want to encrypt an app anyway?
-- Encrypting is undone by decrypting, and trying to encrypt a files many times requires the file to be decrypted that many times as well.
-  Decrypting before encrypting though, will (most likely) corrupt the file, even after encrypting it to undo that action.
-- You can't encrypt a file too many times, or it will be corrupted. The amount depends on the size of the file, its contents, and perhaps its
-  file type / format. The program does not allow you to do so.
+Advanced Settings: For users seeking more control, the tool provides advanced settings to customize encryption actions.
 
-HOW TO RUN THE ENCODER:
+Error Handling: Robust error handling prevents data loss and file corruption, ensuring the integrity of your files.
 
-- Type 'run', and the project's index, and follow the instructions given above.
-- Ignore EVERYTHING that has not been mentioned in this guide.
+Reversible Encryption: The tool facilitates easy decryption, allowing you to revert files to their original state.
+
+Usage Instructions:
+1. Choosing the File
+Start by specifying the file you want to encrypt or decrypt using Encoder. Enter the filename, and remember to include the appropriate file extension (e.g., .txt for text files).
+
+2. Selecting the Action
+Choose the desired action for the file: encryption or decryption. Ensure that your input matches either "encrypt" or "decrypt."
+
+3. Advanced Settings
+If you want to customize the process further:
+
+Enable advanced settings by typing "y."
+Specify whether you are working with a file other than text (e.g., binary files) by typing "y."
+Decide how many times you'd like to repeat the action (useful for multiple encryptions/decryptions).
+4. File Processing
+The Encoder will perform the specified action while ensuring that the file remains intact and uncorrupted.
+
+5. Results
+The result can be found in the file you chose to encrypt. The tool saves the encrypted or decrypted files for your convenience.
+
+Limitations and Constraints:
+Encoder primarily supports English text and common punctuation characters (except backticks).
+It can only operate on files within the directory where Encoder is located.
+While it may work with various file types, it's optimized for text files.
+Excessive encryption can lead to file corruption; the tool sets reasonable limits to prevent this.
+
+How to Run Encoder:
+
+To use the Encoder, type "run" followed by the project's index.
+Follow the instructions provided above.
+Please ignore any information not mentioned in this guide.
+
+Example Usage
+For a hands-on example of how to encrypt or decrypt a text file, try it out with the provided "result" text file in Encoder's directory.

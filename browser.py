@@ -1,4 +1,3 @@
-import sys
 import os
 
 projects = {}
@@ -32,10 +31,6 @@ def help(*args:str) -> None:
         with open(f"{os.getcwd()}\\README.md") as f:
             print(f"\n{f.read()}")
 
-# Closes the browser.
-def exit() -> None:
-    sys.exit(0)
-
 # Clears the terminal's screen, and shows all the projects available.
 def clear() -> None:
     os.system("cls")
@@ -48,21 +43,21 @@ def run(index:str) -> None:
 
 # Prints the contents of the file where the results of the index's project are stored.
 def results(index:str) -> None:
-    for file in os.listdir(os.getcwd() + "\\" + projects[index]):
-        # The result files of all projects either end in .txt or .log, but some projects also have dictionaries (ending in .txt), so we must avoid
-        # reading them. Why not have one for the whole browser? Dictionaries have important differences that matter when running the projects. 
-        if (file.endswith(".txt") or file.endswith(".log")) and not "dictionary" in file:
-            with open(f"{os.getcwd()}\\{projects[index]}\\{file}") as f:
-                print(f"\n{f.read()}")
+    if "result.txt" in os.listdir(f"{os.getcwd()}\\{projects[index]}"):
+        # If the project has a result file, print its content.    
+        with open(f"{os.getcwd()}\\{projects[index]}\\result.txt") as f:
+            print(f"\n{f.read()}")
+    else:
+        print("This project has no result file!")
 
 # Empties the index's project's result file.
 def empty(index:str) -> None:
-    for file in os.listdir(os.getcwd() + "\\" + projects[index]):
-        # Again, we look for the result file using its extension, avoiding dictionaries. Why not name every result file result.txt? In some projects,
-        # you need to type the result file's name, and giving them more self-explanatory names makes the process easier for users.
-        if (file.endswith(".txt") or file.endswith(".log")) and not "dictionary" in file:
-            with open(f"{os.getcwd()}\\{projects[index]}\\{file}", "w") as f:
-                print(f"Emptied the result file of project {projects[index]}")
+    if "result.txt" in os.listdir(f"{os.getcwd()}\\{projects[index]}"):
+        # Again, we look for the result file in the project, if there is one, and if yes, emptying it.
+        with open(f"{os.getcwd()}\\{projects[index]}\\result.txt", "w") as f:
+            print(f"Emptied the result file of project {projects[index]}")
+    else:
+        print("This project does not have a result file!")
 
 while True:
     # Typing a command, then running the command's respective function. If any, passing parameters given by splitting the command.

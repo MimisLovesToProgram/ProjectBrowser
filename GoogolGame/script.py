@@ -20,7 +20,7 @@ while user_input.lower() == "yes" and counter + 1 <= len(hidden):
     user_input = input("Would you like to continue? ")
 
 # After the game has ended, print the results, and write them at the project's log.
-with open(f"{os.getcwd()}\\GoogolGame\\GameLog.log", "a") as f:
+with open(f"{os.getcwd()}\\GoogolGame\\result.txt", "a") as f:
     if max(hidden) == hidden[counter - 1]:
         print("------------------------------------------------\nCongrats! You have found the greatest number among the other hidden ones!")
         f.write(f"The player has won, having found the greatest number among {hidden}!\n")

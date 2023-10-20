@@ -7,7 +7,7 @@ import re
 rec_e = 0
 rec_n = 0
 rec_h = 0
-with open(f"{os.getcwd()}\\WordRace\\record.txt") as f:
+with open(f"{os.getcwd()}\\WordRace\\result.txt") as f:
     for line in f.readlines():
         # If the user wants to reset the high scores, and they empty the result file, we need this if-else.
         if not f.readlines() == []:
@@ -73,7 +73,7 @@ while time.time() - start < limit:
 print(f"========================================\nTime's up! You found {found} words!")
 
 # Checking whether the user has made a new high score, and if yes, modifying the respective high score variable.
-with open(f"{os.getcwd()}\\WordRace\\record.txt", "w") as f:
+with open(f"{os.getcwd()}\\WordRace\\result.txt", "w") as f:
     if found > rec_e and difficulty == "easy":
         rec_e = found
     elif found > rec_n and difficulty == "normal":

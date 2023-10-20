@@ -1,3 +1,0 @@
-This is a simple text file for you to check the Encoder's abilities.
-If you would like to try the program with a different file (not this Test.txt file), bring the file inside the Encoder's directory.
-Then, just type it's name in the prompt shown by the Encoder, and the desirable actions.
