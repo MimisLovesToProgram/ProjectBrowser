@@ -1,4 +1,6 @@
 import os
+import time
+import sys
 
 projects = {}
 projectind = 0
@@ -10,6 +12,17 @@ for project in os.listdir():
         projects[str(projectind)] = project
 
 print("Hello there! Here are the projects available for you to browse: (Type 'help' for the Browser Guide)\n")
+
+# A function to print a string word-by-word.
+def slow_print(text:str) -> None:
+    words = text.split(" ")
+    for word in words:
+        if "\n" in word:
+            print(word, end=' ')
+        else:
+            print(word, end=' ')
+            sys.stdout.flush()
+            time.sleep(0.05)
 
 # Prints all available projects.
 def show() -> None:
@@ -25,11 +38,11 @@ def help(*args:str) -> None:
         # If an index is given, print its project's README.md
         index = args[0]
         with open(f"{os.getcwd()}\\{projects[index]}\\README.md") as f:
-            print(f"\n{f.read()}")
+            slow_print(f"""\n{f.read()}""")
     else:
         # If not, read the browser's folder README.md
         with open(f"{os.getcwd()}\\README.md") as f:
-            print(f"\n{f.read()}")
+            slow_print(f"""\n{f.read()}""")
 
 # Clears the terminal's screen, and shows all the projects available.
 def clear() -> None:
@@ -61,7 +74,7 @@ def empty(index:str) -> None:
 
 while True:
     # Typing a command, then running the command's respective function. If any, passing parameters given by splitting the command.
-    command = input("Type a command: ")
+    command = input("\nType a command: ")
     if "exit" in command:
         exit()
     # Needed in case the user does anything wrong, so that the program does not end. Also giving an exception to know what to tell the developer.
@@ -85,6 +98,6 @@ while True:
             print(f"{command}: No such command. Try running 'help' to check how the browser works!")
     except Exception as e:
 
-        print(f"""\nOops! Something went wrong. You should perhaps try to check how what you tried to do works, by typing 'help', and the project's index.
+        slow_print(f"""\nOops! Something went wrong. You should perhaps try to check how what you tried to do works, by typing 'help', and the project's index.
 Also, was there a logical mistake in your last command?
 The following exception occured: {e}\n""")

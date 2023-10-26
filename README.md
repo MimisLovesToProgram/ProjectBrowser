@@ -16,4 +16,5 @@ special notes:
 
 **Usage:**
 
-The Project Browser is a powerful tool for exploring and running my projects. Users can easily navigate through different projects, view their descriptions, and execute them. The clear and concise documentation ensures that users can make the most of this tool.
+The Project Browser is a powerful tool for exploring and running my projects. Users can easily navigate through different projects, view their 
+descriptions, and execute them. The clear and concise documentation ensures that users can make the most of this tool.
