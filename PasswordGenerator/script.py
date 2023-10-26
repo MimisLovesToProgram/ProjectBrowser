@@ -9,7 +9,7 @@ words = []
 num = int(input("How many passwords do you want? "))
 
 # Adding all words from the dictionary to the list 'words'.
-with open(f"{os.getcwd()}\\PasswordGenerator\\dictionary.txt") as d:
+with open(os.path.join(os.getcwd(), "PasswordGenerator", "dictionary.txt")) as d:
     words = d.readlines()
 
 for i in range(num):
@@ -23,7 +23,7 @@ for i in range(num):
         password += pattern
 
     # Write the generated password in PassLog.log, but only from start to the length limit.
-    with open(f"{os.getcwd()}\\PasswordGenerator\\result.txt", "a") as l:
+    with open(os.path.join(os.getcwd(), "PasswordGenerator", "result.txt"), "a") as l:
         l.write(password[:plen] + "\n")
 
     password = ""

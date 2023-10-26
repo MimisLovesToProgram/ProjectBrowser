@@ -3,7 +3,7 @@ import os
 action = input("Would you like to read a saved item, add or delete one? (type read, add or delete) ")
 
 if action == "read":
-    with open(f"{os.getcwd()}\\Quizes\\result.txt") as f:
+    with open(os.path.join(os.getcwd(), "Quizes", "result.txt")) as f:
         # Getting the lines and iterating over them. 'correct' indicates whether we are operating over the lines the user asked for.
         # Also getting all current titles, for convenience and title validity.
         lines = []
@@ -29,7 +29,7 @@ if action == "read":
                 input(line[:line.index("?")] + "? ")
                 print("The answer is........" + line[line.index("?") + 1:])
 elif action == "add":
-    with open(f"{os.getcwd()}\\Quizes\\result.txt", "a") as f:
+    with open(os.path.join(os.getcwd(), "Quizes", "result.txt"), "a") as f:
         # Create the new quiz with the given title, then adding questions untill the user is done doing so.
         f.write(f"------------------------------------------------------------------------------------------------------------{input('What is the title of the Quiz going to be? ')}" + "\n")
         line = input("First line in the quiz: (type 'stop' anytime to finish writing) ")
@@ -42,7 +42,7 @@ else:
     lines = []
     titles = []
     correct = False
-    with open(f"{os.getcwd()}\\Quizes\\result.txt") as f:
+    with open(os.path.join(os.getcwd(), "Quizes", "result.txt")) as f:
         for line in f.readlines():
             plines.append(line)
             if "--------" in line:
@@ -65,5 +65,5 @@ else:
             correct = False
         if not correct:
             lines.append(line + "\n")
-    with open(f"{os.getcwd()}\\Quizes\\result.txt", "w") as f:
+    with open(os.path.join(os.getcwd(), "Quizes", "result.txt"), "w") as f:
         f.writelines(lines)

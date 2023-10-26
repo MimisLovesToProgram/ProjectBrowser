@@ -1,5 +1,5 @@
-The documentation provides a clear guide on how to use the Project Browser. It covers the available commands, their usage, and special notes. 
-Here are the key points from the documentation:
+The following documentation provides a clear guide on how to use the Project Browser. It covers the available commands, their usage, and 
+special notes:
 
 - Use "help" to get information about a specific project.
     Example: help 1 (to get information about project 1)

@@ -5,7 +5,7 @@ import os
 import datetime
 
 # Show the user the result file, for convenience.
-with open(f"{os.getcwd()}\\Self-Improver\\result.txt") as f:
+with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt")) as f:
     print("Here are the contents of the project's result file, for convenience and informative purposes:\n")
     print(f.read() + "\n")
 
@@ -29,12 +29,12 @@ if action == "1":
     prevlines = []
     lines = []
     title = input("Give a title for your new goal (or for an existing one to be restarted): ")
-    with open(f"{os.getcwd()}\\Self-Improver\\result.txt") as f:
+    with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt")) as f:
         prevlines = f.readlines()
 
     # If there is not a goal with this title, create one in the following format.
     if not f"------------------------------------------------------------->{title}\n" in prevlines:
-        with open(f"{os.getcwd()}\\Self-Improver\\result.txt", "a") as f:
+        with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt"), "a") as f:
             goal = input(f"What is {title}'s goal (in minutes)? ")
             f.write(f"------------------------------------------------------------->{title}\n")
             f.write(f"Goal (minutes): {goal}\n")
@@ -73,19 +73,19 @@ if action == "1":
                     # This is just for the notes.
                     lines.append(line)
 
-        with open(f"{os.getcwd()}\\Self-Improver\\result.txt", "w") as f:
+        with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt"), "w") as f:
             f.writelines(lines)
 
 elif action == "2":
     # Again, getting the lines before modifying, and a list for the lines after modifications.
     prevlines = []
     lines = []
-    with open(f"{os.getcwd()}\\Self-Improver\\result.txt") as f:
+    with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt")) as f:
         prevlines = f.readlines()
 
     title = input("Please share the goal title you wish to update on: ")
 
-    with open(f"{os.getcwd()}\\Self-Improver\\result.txt", "w") as f:
+    with open(os.path.join(os.getcwd(), "Self-Improver", "result.txt"), "w") as f:
         # Declaring modification variables, and checking whether we are iterating over the correct lines of 'result.txt', just like above.
         minutes = 0
         goal = 0

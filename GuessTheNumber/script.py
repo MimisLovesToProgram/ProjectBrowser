@@ -102,7 +102,7 @@ while score1 < 5 and score2 < 5:
     print("======================================")
 
 # After the game has ended, check who won, and write the result in the project's result file.
-with open(f"{os.getcwd()}\\GuessTheNumber\\result.txt", "a") as f:
+with open(os.path.join(os.getcwd(), "GuessTheNumber", "result.txt"), "a") as f:
     if score1 >= 5 and score2 >= 5:
         if score1 > score2:
             print(f"Player 1 Has Won {score1}-{score2}!")

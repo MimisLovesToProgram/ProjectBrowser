@@ -29,7 +29,7 @@ def generate_response(user_input:str) -> str:
         sys.exit(0)
     # If they did not ask to end the conversation, they can only want to save it.
     else:
-        with open(f"{os.getcwd()}\\RubberDuck\\result.txt", "a") as f:
+        with open(os.path.join(os.getcwd(), "RubberDuck", "result.txt"), "a") as f:
             f.write(convo + "--------------------------------------------------------------------------------------------\n")
         return "Duck: Saved the current conversation!"
 

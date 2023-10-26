@@ -57,7 +57,7 @@ for i in range(repetition):
                     sys.exit(0)
 
     # For each time the above tests pass (so that the file doesn't get corrupted), perform the requested actions.
-    with open(os.getcwd() + f"\\Encoder\\{file}", "w") as f:
+    with open(os.path.join(os.getcwd(), "Encoder", file), "w") as f:
         try:
             if funct == "encrypt":
                 f.write(my_codec.encrypt(content))

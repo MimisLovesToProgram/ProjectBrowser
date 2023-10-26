@@ -19,13 +19,13 @@ set_category_budgets = {}
 
 list_AutomatedAnalysisLines = []
 def AutomatedAnalysisLines():
-    with open(f"{os.getcwd()}\\ExpenseTracker\\AutomatedAnalysisData.txt") as f:
+    with open(os.path.join(os.getcwd(), "ExpenseTracker", "AutomatedAnalysisData.txt")) as f:
         for line in f.readlines():
             yield line
 
 list_lines = []
 def lines():
-    with open(f"{os.getcwd()}\\ExpenseTracker\\result.txt") as f:
+    with open(os.path.join(os.getcwd(), "ExpenseTracker", "result.txt")) as f:
         for line in f.readlines():
             yield line
 
@@ -61,7 +61,7 @@ for line in lines():
 
 # Checking the user's desired action.
 if action == "1":
-    with open(f"{os.getcwd()}\\ExpenseTracker\\result.txt", "a") as f:
+    with open(os.path.join(os.getcwd(), "ExpenseTracker", "result.txt"), "a") as f:
         # Setting the variable "category" up for later use, getting info about the expense being logged, and validating it.
         category = ""
         item = input("Enter the Item/Service bought (e.g. Starbucks): ")
@@ -78,7 +78,7 @@ if action == "1":
 
         # If the item being loged is new, get it's category, and if not, get it's category from AutomatedAnalysisItemCategories.
         if not item in AutomatedAnalysisItemCategories:
-            with open(f"{os.getcwd()}\\ExpenseTracker\\AutomatedAnalysisData.txt", "a") as AutomatedAnalysisData:
+            with open(os.path.join(os.getcwd(), "ExpenseTracker", "AutomatedAnalysisData.txt"), "a") as AutomatedAnalysisData:
                 # Show the user all existing categories available to use (if any), and get the category given.
                 if not AutomatedAnalysisItemCategories == {}:
                     print(f"Here are all currently used categories: {','.join(category_importance)}")
@@ -235,7 +235,7 @@ else:
             final_category_budgets[category] = round((est_category_budgets[category] + prev_month_category_money[category]) / 2)
         print(f"{category}: ${final_category_budgets[category]}")
 
-    with open(f"{os.getcwd()}\\ExpenseTracker\\AutomatedAnalysisData.txt", "w") as f:
+    with open(os.path.join(os.getcwd(), "ExpenseTracker", "AutomatedAnalysisData.txt"), "w") as f:
         # Preparing for adjustments on the way income is split, or set category budgets.
         new_lines = list_AutomatedAnalysisLines
         category_budget_adjustment = input("\nWould you like to change any category's budget? ('yes' or 'no') ").lower()

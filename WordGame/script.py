@@ -22,7 +22,7 @@ used = []
 guesses = 0
 index = 0
 # Picking the word from the dictionary, processing it, then filling the variable 'gap' with underscores, for each letter contained in 'word'
-with open(f"{os.getcwd()}\\WordGame\\dictionary.txt") as d:
+with open(os.path.join(os.getcwd(), "WordGame", "dictionary.txt")) as d:
     word = random.choice(d.readlines())
     word = word.lower()
     word = word.strip()
