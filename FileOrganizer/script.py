@@ -1,21 +1,28 @@
 import os
+import re
 import shutil
 import mimetypes
+from tkinter import filedialog
 
-# Getting information about the folder to organize, and the user's name.
-# Why have mid_folders instead of just folder with an input? With mid_folders its easier to get the user's name, to be used later.
-mid_folders = input("Type the folders from your user's folder to the folder to be organized (separated by '\\') ").split("\\")
-user = mid_folders[0]
-folder = "C:\\Users\\" + "\\".join(mid_folders)
+# Opening the File Explorer on Tkinter, and asking the user to pick a folder.
+folder = filedialog.askdirectory(title="Select a folder.")
+if not folder:
+    print("Make sure to select a folder next time.")
+    exit()
+
+# Getting the user's name from the path.
+user = re.search(r"Users/([^/]+)", folder).group(1)
 
 folder_created = False
 new_folder = ""
 
 # Getting the user's desired actions and validating the variable 'segment', so that no errors or unexpected behaviour occurs.
 choice = input("Organize by 1: extension or 2: naming segment? (1 or 2) ")
+while choice == "":
+    choice = input("Please type '1' or '2': ")
 segment = input("Type a segment common to every file to be organized, or an extension to organize by. ")
 while segment == "":
-    segment = input("Please give a segment or extension. ")
+    segment = input("Please type a segment or extension. ")
 
 # Iterating over the selected folder, and acting accordingly to the user's desires.
 for file in os.listdir(folder):
@@ -30,24 +37,28 @@ for file in os.listdir(folder):
                     os.mkdir(f"C:\\Users\{user}\Pictures\{new_folder}")
                     folder_created = True
                 shutil.move(f"{folder}\\{file}", f"C:\\Users\{user}\Pictures\{new_folder}\{file}")
+                print(f"Moving file {file} to Pictures")
             elif filetype == "text":
                 if not folder_created:
                     new_folder = input('Name a folder to to put the files to be organized in: ')
                     os.mkdir(f"C:\\Users\{user}\Documents\{new_folder}")
                     folder_created = True
                 shutil.move(f"{folder}\\{file}", f"C:\\Users\{user}\Documents\{new_folder}\{file}")
+                print(f"Moving file {file} to Documents")
             elif filetype == "audio":
                 if not folder_created:
                     new_folder = input('Name a folder to to put the files to be organized in: ')
                     os.mkdir(f"C:\\Users\{user}\Music\{new_folder}")
                     folder_created = True
                 shutil.move(f"{folder}\\{file}", f"C:\\Users\{user}\Music\{new_folder}\{file}")
+                print(f"Moving file {file} to Music")
             elif filetype == "video":
                 if not folder_created:
                     new_folder = input('Name a folder to to put the files to be organized in: ')
                     os.mkdir(f"C:\\Users\{user}\Videos\{new_folder}")
                     folder_created = True
                 shutil.move(f"{folder}\\{file}", f"C:\\Users\{user}\Videos\{new_folder}\{file}")
+                print(f"Moving file {file} to Videos")
             # If there is no default folder for this file type, create one on the selected folder and move the file there.
             elif not folder_created:
                 new_folder = input('Name a folder to to put the files to be organized in: ')
